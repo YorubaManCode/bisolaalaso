@@ -110,6 +110,10 @@ footer {
     font-size: 25px;
   }
 
+  video {
+    width: 100%;
+  }
+
   nav ul li {
     display: block;
     float: left;
