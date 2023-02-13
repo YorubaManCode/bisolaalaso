@@ -59,7 +59,11 @@
         
         <footer>
             <p>Address: No 2 Ojuelegba, Lagos, Nigeria</p>
-            <p>Copyright 2022 (c)</p>
+            <p id="copyr"></p>
+            <script>
+                var dt = new Date();
+                document.getElementById('copyr').innerHTML = "Copyright " + dt.getFullYear() + "(c)";
+            </script>
         </footer>
 
     </body>
