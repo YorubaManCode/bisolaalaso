@@ -122,4 +122,12 @@ footer {
   }
 }
 
+.not-visible {
+  display: none;
+}
+
+.make-it-visible {
+  display: block;
+}
+
 
