@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 
 // Create Express app
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 // Enable CORS for all routes
 app.use(cors());
@@ -34,5 +34,5 @@ app.get('/getAllClothesSold', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+  console.log(`Server listening @ http://localhost:${port}`);
 });
