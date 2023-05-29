@@ -42,8 +42,19 @@
                     <source src="./video/alasonla_welcome.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
+                <p>a + b = </p>
+                
+                <p id="efo"></p>
+                <script>
+                    var d; //variable declaration
+                    var a = 100; //variable assignment
+                    var b = 100
+                    var c = a + b;
+                    d = c / 2;
+                    document.getElementById('efo').innerHTML = d;
+                </script>
                 <div>
-                    <button id="showClothButton">Show Clothes Available</button>
+                    <button id="showClothButton">Show Clothes That We Sell</button>
                 </div>
                 <figure class="not-visible">
                     <img src="./images/adire.jpg" alt="This is picture of Adire Cloth from Nigeria" width="400px" height="400px">
@@ -57,6 +68,25 @@
                     <img src="./images/lace.jpg" alt="This is picture of Adire Cloth from Nigeria" width="400px" height="400px">
                     <figcaption>Fig.3 - Lace</figcaption>
                 </figure>
+
+                <div>
+                    <button id="showClothAvailableNow">Show Clothes That We Have Now And Price</button>
+
+                    <table id="clothAvailableNow">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Fabric Name</th>
+                            <th>Price</th>
+                            <th>Unit of Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Table body will be dynamically generated -->
+                        </tbody>
+                    </table>
+                </div>
+
             </article>
             
         </section>

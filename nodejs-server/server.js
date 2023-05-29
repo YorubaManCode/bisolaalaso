@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
+const cors = require('cors');
 
 // Create MySQL connection
 const connection = mysql.createConnection({
@@ -12,6 +13,9 @@ const connection = mysql.createConnection({
 // Create Express app
 const app = express();
 const port = 8080;
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Endpoint to get all clothes sold
 app.get('/getAllClothesSold', (req, res) => {
