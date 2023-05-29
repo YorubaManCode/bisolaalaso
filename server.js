@@ -2,12 +2,20 @@ const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
 
-// Create MySQL connection
+// Create MySQL connection - local
+// const connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'Ejasise_8056',
+//   database: 'bisola_alaso_db',
+// });
+
+//whole world.
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Ejasise_8056',
-  database: 'bisola_alaso_db',
+  host: 'us-cdbr-east-06.cleardb.net',
+  user: 'b64ecb0167010e',
+  password: '544cb520',
+  database: 'heroku_8efa25fe109dcbc',
 });
 
 // Create Express app
