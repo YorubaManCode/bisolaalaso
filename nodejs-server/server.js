@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 
 // Create Express app
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 // Enable CORS for all routes
 app.use(cors());
