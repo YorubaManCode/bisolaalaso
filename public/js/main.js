@@ -29,7 +29,9 @@ window.onload = function() {
         xhr.send(); 
     }
 
-    var endpoint = 'http://localhost:8080/getAllClothesSold';
+    //var endpoint = 'http://localhost:8080/getAllClothesSold';
+
+    var endpoint = window.location.origin + '/getAllClothesSold';
 
     document.getElementById('showClothAvailableNow').addEventListener("click", 
 
