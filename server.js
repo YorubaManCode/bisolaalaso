@@ -14,6 +14,9 @@ const connection = mysql.createConnection({
 const app = express();
 const port = process.env.PORT || 8080;
 
+// Serve static files from the "public" directory
+app.use(express.static('public'));
+
 // Enable CORS for all routes
 app.use(cors());
 
