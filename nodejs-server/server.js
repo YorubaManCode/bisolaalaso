@@ -34,5 +34,5 @@ app.get('/getAllClothesSold', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+  console.log(`Server listening @ http://localhost:${port}`);
 });
