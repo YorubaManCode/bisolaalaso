@@ -29,7 +29,8 @@ window.onload = function() {
         xhr.send(); 
     }
 
-    //var endpoint = 'http://localhost:8080/getAllClothesSold';
+    //global variable
+    var hasAllAvailableClothesNowButtonBeenClicked = false; //boolean or bool or flag
 
     var endpoint = window.location.origin + '/getAllClothesSold';
 
@@ -37,34 +38,40 @@ window.onload = function() {
 
         function() { 
 
-            makeGetRequest(endpoint, 
+            if (hasAllAvailableClothesNowButtonBeenClicked === false) {
+
+                makeGetRequest(endpoint, 
+                    
+                    function(error, response) {
+                        if (error) {
+                            console.error('Error:', error);
+                        } else {
+                            clothAvailableNowAndPrice = response;
+                            console.log('Response:', clothAvailableNowAndPrice);
                 
-                function(error, response) {
-                    if (error) {
-                        console.error('Error:', error);
-                    } else {
-                        clothAvailableNowAndPrice = response;
-                        console.log('Response:', clothAvailableNowAndPrice);
-            
-                        // Get the table body element
-                        var tableBody = document.querySelector('#clothAvailableNow tbody');
-            
-                        // Loop through the data array and generate table rows
-                        for (let rowIndex = 0; rowIndex < clothAvailableNowAndPrice.length; rowIndex++) {
-                            var row = document.createElement('tr');
-                            let rowData = clothAvailableNowAndPrice[rowIndex];
-            
-                            for (const cellData of Object.values(rowData)) {
-                                var cell = document.createElement('td');
-                                cell.textContent = cellData;
-                                row.appendChild(cell);
-                            }
-            
-                            tableBody.appendChild(row);
-                        };
+                            // Get the table body element
+                            var tableBody = document.querySelector('#clothAvailableNow tbody');
+                
+                            // Loop through the data array and generate table rows
+                            for (let rowIndex = 0; rowIndex < clothAvailableNowAndPrice.length; rowIndex++) {
+                                var row = document.createElement('tr');
+                                let rowData = clothAvailableNowAndPrice[rowIndex];
+                
+                                for (const cellData of Object.values(rowData)) {
+                                    var cell = document.createElement('td');
+                                    cell.textContent = cellData;
+                                    row.appendChild(cell);
+                                }
+                
+                                tableBody.appendChild(row);
+                            };
+                        }
                     }
-                }
-            ); //function call
+                ); //function call
+
+                hasAllAvailableClothesNowButtonBeenClicked = true;
+
+            }
 
         }
     );
