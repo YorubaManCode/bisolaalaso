@@ -26,7 +26,7 @@ const port = process.env.PORT || 8080;
 app.use(express.static('public'));
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors()); 
 
 // Endpoint to get all clothes sold
 app.get('/getAllClothesSold', (req, res) => {
